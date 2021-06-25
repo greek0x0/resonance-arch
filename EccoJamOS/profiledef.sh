@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="ezarcher-xfce"
-iso_label="EZARCHER-XFCE_$(date +%Y%m)"
-iso_publisher="Ezarcher Linux <https://sourceforge.net/projects/ezarch/>"
-iso_application="Ezarcher DVD"
+iso_name="resonance-os"
+iso_label="RESONANCE_OS_$(date +%Y%m)"
+iso_publisher="Resonance OS <https://github.com/cronos-hash/>"
+iso_application="Resonance DVD"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')

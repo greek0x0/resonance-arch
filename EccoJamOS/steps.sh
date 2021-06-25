@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Version: 4.7 -- by eznix (https://sourceforge.net/projects/ezarch/)
+# Revision: 2021.06.16
+# (GNU/General Public License version 3.0)
+
 # ----------------------------------------
 # Define Variables
 # ----------------------------------------
@@ -71,12 +75,12 @@ rm -r ./ezreleng/syslinux
 
 # Copy ezrepo to opt
 cpezrepo () {
-cp -r ./opt/ezrepo /opt/
+cp -r ./opt/eccojams /opt/
 }
 
 # Remove ezrepo from opt
 rmezrepo () {
-rm -r /opt/ezrepo
+rm -r /opt/eccojams
 }
 
 # Delete automatic login
@@ -216,3 +220,19 @@ crtlocalec
 runmkarchiso
 rmezrepo
 
+
+# Disclaimer:
+#
+# THIS SOFTWARE IS PROVIDED BY EZNIX “AS IS” AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL EZNIX BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# END
+#
