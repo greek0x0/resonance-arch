@@ -339,7 +339,6 @@ scrot
 thunar
 tumbler
 viewnior
-mpv
 mpd
 mpc
 pavucontrol
@@ -398,3 +397,45 @@ calamares
 ckbcomp
 mkinitcpio-openswap
 
+
+
+#All together now..
+discord
+youtube-dl
+bashtop
+figlet
+neofetch
+lolcat
+exa
+bat
+starship
+task
+cmatrix
+
+
+#The Virtual world...
+dnsmasq
+iptables-nft
+virt-manager
+edk2-ovmf
+libvirt
+qemu
+
+
+
+#YAY!!!!
+
+looking-glass
+ytfzf
+#scream
+#unable to find scream in repo ?
+#scream-git 3.6.r138.c1d5aef-1
+fzf
+ueberzug
+mpv
+
+abduco
+obs-studio
+spice-protocol
+rust
+go

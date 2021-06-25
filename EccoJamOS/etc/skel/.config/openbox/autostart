@@ -46,4 +46,4 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Start MPD player (+notification-sender)
 #exec mpd &
 "$MPD_TCD"
-background auto /usr/share/gif/train.gif & 
+background auto /usr/share/gif/beautycity.gif & 
