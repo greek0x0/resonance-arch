@@ -1,0 +1,11 @@
+#
+# Set system-wide environment variables here for Openbox
+# User-specific variables should be placed in $HOME/.config/openbox/environment
+#
+# ---
+
+# Use qt5-styleplugins for QT Themes
+export QT_QPA_PLATFORMTHEME=gtk2
+
+# Use GTK file dialog for Telegram-desktop
+export TDESKTOP_USE_GTK_FILE_DIALOG=1

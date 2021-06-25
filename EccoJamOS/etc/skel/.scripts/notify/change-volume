@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+LC_ALL=C LANG=C; source "$HOME"/.owl4ce_var
+
+noterr() { "$EXNOTIFY_SEND" -u low -r 15 "Install alsa-utils!"; exit 1; }
+type -p "amixer" &> /dev/null || noterr
+
+CHK_MUTE() { amixer get Master | grep 'off'; }
+
+notify() {
+    VOLUME="$(amixer get Master | grep -oP '\[\K[^%\]]+' | head -n1)"
+    
+    if [[ "$VOLUME" -eq 0 ]]; then
+        icon_name="notification-audio-volume-muted"
+    elif [[ "$VOLUME" -lt 30 ]]; then
+        icon_name="notification-audio-volume-low"
+    elif [[ "$VOLUME" -lt 70 ]]; then
+        icon_name="notification-audio-volume-medium"
+    else
+        icon_name="notification-audio-volume-high"
+    fi
+    
+    exec "$EXNOTIFY_SEND" -u low -r 123 -t 700 -i "$icon_name" "$VOLUME " -h int:value:"$VOLUME"
+}
+
+case $1 in
+    up)     amixer set Master on -q
+            amixer sset Master "${AUDIO_STEPS:-5}"%+ -q
+            notify
+    ;;
+    down)   amixer set Master on -q
+            amixer sset Master "${AUDIO_STEPS:-5}"%- -q
+            notify
+    ;;
+    mute)   amixer set Master 1+ toggle -q
+            if CHK_MUTE &> /dev/null; then
+                icon_name="notification-audio-volume-muted"
+                exec "$EXNOTIFY_SEND" -u low -r 123 -t 700 -i "$icon_name" "Muted "
+            else
+                notify
+            fi
+    ;;
+esac; exit $?    
