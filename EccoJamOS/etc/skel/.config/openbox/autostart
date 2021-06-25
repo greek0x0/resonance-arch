@@ -25,7 +25,7 @@ exec thunar --daemon &
 #picom -b &> /dev/null
 picom &
 
-
+plank &
 # Authentication Agent - PolicyKit
 if command -v lxpolkit &> /dev/null; then
     lxpolkit &> /dev/null &
