@@ -45,5 +45,6 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Start MPD player (+notification-sender)
 #exec mpd &
 "$MPD_TCD"
-background auto /usr/share/gif/maison.gif & 
+#unselect for moving wallpaper
+#background auto /usr/share/gif/maison.gif & 
 plank &> /dev/null
