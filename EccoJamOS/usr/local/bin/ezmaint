@@ -24,7 +24,7 @@ welcomer () {
   echo "==================================================="
   echo "=                                                 ="
   echo "=     EZArcher Maintenance Script                 ="
-  echo "=                                                 ="
+  echo "=     Resonance OS                                ="
   echo "=                                                 ="
   echo "=     Version 2  (Release)                        ="
   echo "=                                                 ="
