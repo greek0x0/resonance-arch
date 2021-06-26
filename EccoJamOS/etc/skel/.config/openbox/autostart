@@ -15,6 +15,7 @@ nitrogen --restore &
 # UI Appearance
 { "${VISMOD_DIR}/mode-toggle" just_ui && "$OB_TRAY"; } &> /dev/null
 
+exec dunst &
 
 #File Manager
 exec thunar --daemon &
@@ -43,8 +44,9 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 
 
 # Start MPD player (+notification-sender)
-#exec mpd &
+exec mpd &
 "$MPD_TCD"
 #unselect for moving wallpaper
 #background auto /usr/share/gif/maison.gif & 
-plank &> /dev/null
+exec plank &
+xfce-power-manager &
