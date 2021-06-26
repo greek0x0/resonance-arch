@@ -1,3 +1,21 @@
 Jun 25 06:16 : avahi: Service 'Music Player @ arch' successfully established.
 Jun 25 06:24 : player: played "Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"
 Jun 25 06:24 : avahi: Service 'Music Player @ arch' successfully established.
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3; Failed to open '/home/greek/Music/Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3': No such file or directory
+Jun 26 11:28 : player: played "Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3; Failed to open '/home/greek/Music/Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3': No such file or directory
+Jun 26 11:28 : player: played "Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3"
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3; Failed to open '/home/greek/Music/Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3': No such file or directory
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/N3WPORT - Power (feat. braev) [NCS Release].mp3; Failed to open '/home/greek/Music/N3WPORT - Power (feat. braev) [NCS Release].mp3': No such file or directory
+Jun 26 11:28 : player: played "Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3"
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/N3WPORT - Power (feat. braev) [NCS Release].mp3; Failed to open '/home/greek/Music/N3WPORT - Power (feat. braev) [NCS Release].mp3': No such file or directory
+Jun 26 11:28 : player: played "N3WPORT - Power (feat. braev) [NCS Release].mp3"
+Jun 26 11:28 : exception: Failed to decode /home/greek/Music/NEFFEX - Grateful [Copyright Free].mp3; Failed to open '/home/greek/Music/NEFFEX - Grateful [Copyright Free].mp3': No such file or directory
+Jun 26 11:28 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Jun 26 11:28 : update: removing NEFFEX - Grateful [Copyright Free].mp3
+Jun 26 11:28 : update: removing N3WPORT - Power (feat. braev) [NCS Release].mp3
+Jun 26 11:28 : update: removing Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+Jun 26 11:28 : update: removing Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+Jun 26 11:28 : update: removing Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+Jun 26 11:28 : update: added /Home - 4 [Extended] _ Resting State.mp3
+Jun 26 11:29 : player: played "Home - 4 [Extended] _ Resting State.mp3"
