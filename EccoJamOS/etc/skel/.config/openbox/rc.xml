@@ -352,7 +352,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>cool-retro-term</command>
+        <command>alacritty</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -367,27 +367,27 @@
     </keybind>
     <keybind key="W-n">
       <action name="Execute">
-        <command>networkmanager_dmenu</command>
+	<command>~/.config/rofi/bin/network</command>
       </action>
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>~/.config/rofi/bin/launcher</command>
+	<command>~/.config/rofi/scripts/appsmenu.sh</command>
       </action>
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
-        <command>~/.config/rofi/bin/mpd</command>
+        <command>~/.config/rofi/scripts/mpd.sh</command>
       </action>
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>~/.config/rofi/bin/powermenu</command>
+        <command>~/.config/rofi/scripts/powermenu.sh</command>
       </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/.config/rofi/bin/screenshot</command>
+	<command>~/.config/rofi/scripts/screenshot.sh</command>
       </action>
     </keybind>
     <keybind key="W-i">

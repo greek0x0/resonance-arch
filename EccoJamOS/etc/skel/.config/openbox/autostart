@@ -25,7 +25,6 @@ exec thunar --daemon &
 #picom -b &> /dev/null
 picom &
 
-plank &
 # Authentication Agent - PolicyKit
 if command -v lxpolkit &> /dev/null; then
     lxpolkit &> /dev/null &
@@ -46,4 +45,5 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Start MPD player (+notification-sender)
 #exec mpd &
 "$MPD_TCD"
-background auto /usr/share/gif/beautycity.gif & 
+background auto /usr/share/gif/maison.gif & 
+plank &> /dev/null
