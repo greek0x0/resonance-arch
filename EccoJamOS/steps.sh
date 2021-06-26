@@ -18,16 +18,16 @@ KEYMP="us"
 KEYMOD="pc105"
 # pc105 and pc104 are modern standards, all others need to be researched
 
-MYUSERNM="live"
+MYUSERNM="usr"
 # use all lowercase letters only
 
-MYUSRPASSWD="live"
+MYUSRPASSWD="toor"
 # Pick a password of your choice
 
 RTPASSWD="toor"
 # Pick a root password
 
-MYHOSTNM="ezarcher"
+MYHOSTNM="resonance"
 # Pick a hostname for the machine
 
 # ----------------------------------------
