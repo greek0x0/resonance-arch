@@ -1,7 +1,8 @@
 #
 # ~/.bashrc
 #
-
+timeout -k 1 1 ./endoh1 < endoh1.c | lolcat
+clear
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

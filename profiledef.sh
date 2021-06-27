@@ -77,6 +77,6 @@ file_permissions=(
   ["/etc/skel/.color-toys/pipes2"]="0:0:755"
   ["/etc/skel/.color-toys/pipes2-slim"]="0:0:755"
   ["/usr/bin/background"]="0:0:755"
-
+  ["/usr/local/bin/endoh1"]="0:0:755"
 
 )
