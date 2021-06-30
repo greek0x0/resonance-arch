@@ -51,3 +51,4 @@ exec mpd &
 exec plank &
 xfce-power-manager &
 exec python3 /home/usr/.config/openbox/play.py &
+exec xfsettingsd --replace --no-daemon
