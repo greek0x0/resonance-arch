@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
 #
-timeout -k 1 1 ./endoh1 < endoh1.c | lolcat
+timeout -k 1 1 ~/./endoh1 < endoh1.c | lolcat
 clear
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -41,6 +41,7 @@ alias xmr='curl rate.sx/xmr'
 
 alias viewalias='cat ~/.bashrc'
 alias youtube='ytfzf -t'
+alias anime='bash ~/scripts/ani*'
 alias vmlist='sudo virsh list --all'
 alias vmstart='sudo virsh start'
 alias vmforceoff='sudo virsh destroy'
@@ -74,6 +75,7 @@ alias mine='sudo sysctl -w vm.nr_hugepages=128 && sudo ./xmr-stak-rx --noTest'
 alias sesh='abduco -A $1 $2'
 alias vpn='echo "mullvad relay list" && echo "mullvad commands" && echo "mullvad account get" && echo "mullvad relay set location" && echo "mullvad connect" && echo "mullvad status" && echo "mullvad relay update" && echo "mullvad auto-connect set on/off" && echo "mullvad-exclude <program>" && echo "mullvad split-tunnel pid list" && echo "mullvad split-tunnel pid add <pid>" && echo "mullvad split-tunnel pid delete <pid>" && echo "mullvad split-tunnel pid clear" '
 alias sls='tmux ls'
+alias gget='git clone https://github.com/cronos-hash/$1'
 alias ksesh='tmux kill-ses -t $1'
 alias detach='tmux detach'
 alias c="echo 'CMDS: isodrive, virt, macos, windows, linux, crypto, xmr, youtube, attach, detach, sls, nsesh, opsesh, die, relax, yeet, files, gimme, cloud , c' | lolcat"
@@ -81,4 +83,4 @@ eval "$(starship init bash)"
 figlet -f small "comp" -w 10000 | lolcat
 #mullvad status #NOT EVERYONE USES MULLVAD
 task
-
+alias gh="cat ~/repo/token/token && git push"
