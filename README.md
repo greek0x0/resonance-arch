@@ -6,8 +6,10 @@ Resonance arch is a distribution of arch designed for digital forensics and pene
 
 ### demo
 
+![demo](https://user-images.githubusercontent.com/78325649/126049150-f395f465-0ded-491f-9526-c18c14270bf5.gif)
 
-![demo](https://user-images.githubusercontent.com/78325649/126049012-968decda-300d-45b6-bf6b-5521df8e9dbb.gif)
+### theme switching
+
 ![theme](https://user-images.githubusercontent.com/78325649/126049086-cc2bf8fd-3919-4642-b271-ebac9294f3da.gif)
 
 ### changing themes
