@@ -1,0 +1,8 @@
+configuration {
+  show-icons:         true;
+  icon-theme:         "Numix-Apps";
+  terminal:           "cool-retro-term";
+  cycle:              false;
+  hide-scrollbar:     true;
+  disable-history:    false;
+}

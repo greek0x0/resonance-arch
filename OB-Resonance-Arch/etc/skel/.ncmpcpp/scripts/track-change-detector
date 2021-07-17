@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+LC_ALL=C LANG=C; source "$HOME"/.owl4ce_var
+
+type -p {"mpd","mpc"} &> /dev/null || exit 1
+
+run() {
+    while :; do
+        mpc current > "$NCMPCPP_SCRIPTS_DIR"/current-track."${STATE_EXT:-joy}"
+        nice -n "19" mpc idle || mpc idle
+        [[ "$(cat ${NCMPCPP_SCRIPTS_DIR}/current-track.${STATE_EXT:-joy})" != *"$(mpc current)"* ]] && \
+        "$NCMPCPP_SCRIPTS_DIR"/notify
+    done
+}
+
+{
+    if { pgrep "mpd" || pstree | grep "mpd"; } &> /dev/null; then
+        run
+    else
+        nice -n "3" mpd || mpd
+        run
+    fi
+} &> /dev/null &
+
+exit $?

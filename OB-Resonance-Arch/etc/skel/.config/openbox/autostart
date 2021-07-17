@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+# ---
+source "$HOME"/.owl4ce_var
+
+
+
+
+exec nitrogen --restore &
+# there was once a pulseaudio here
+
+# UI Appearance
+{ "${VISMOD_DIR}/mode-toggle" just_ui && "$OB_TRAY"; } &> /dev/null
+
+exec dunst &
+
+#File Manager
+exec thunar --daemon &
+
+
+
+# Compositor
+#picom -b &> /dev/null
+picom &
+
+# Authentication Agent - PolicyKit
+if command -v lxpolkit &> /dev/null; then
+    lxpolkit &> /dev/null &
+elif [ -x "/usr/libexec/polkit-gnome-authentication-agent-1" ]; then
+    /usr/libexec/polkit-gnome-authentication-agent-1 &> /dev/null &
+fi
+
+# Sessions Autolock
+xautolock -time "$AUTOLOCK_MINUTE" -locker "$($DEFAPPS_EXEC -g lockscreen)" -detectsleep -resetsaver -corners 00-- -cornersize 1000 \
+-notifier "$EXNOTIFY_SEND -i ${ICON_GLADIENT_DIR}/lock.png 'Lockscreen' 'Will be locked in 5s from now'" -notify 5 &> /dev/null &
+
+
+
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+
+# Start MPD player (+notification-sender)
+exec mpd &
+"$MPD_TCD"
+#unselect for moving wallpaper
+background auto /usr/share/gif/inspace.gif & 
+exec plank &
+xfce-power-manager &
+exec python3 /home/usr/.config/openbox/play.py &
+exec xfsettingsd --replace --no-daemon
