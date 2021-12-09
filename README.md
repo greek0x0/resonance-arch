@@ -1,35 +1,39 @@
-# Resonance Arch
+<div align="center">
+    <img src=".logo/Resonance-Arch.png" width=150>
+    <h1><b>R E S O N A N C E - A R C H</b></h1>
+</div>
 
-### What is Resonance Arch?
+## **DESCRIPTION** ##
 
-Resonance arch is a distribution of arch designed for digital forensics and penetration testing.
+**Resonance Arch** is a linux distribution based on Arch Linux designed for **digital forensics and penetration testing**.  <br/>
+It has **many cute and cool themes** and uses **Awesome WM**. (also Openbox edition available)
 
-### demo
+> **NOTE**  <br/>We are not responsible for our users, we only give them the tools to use **NOT for selfish purposes**.
+
+## **DEMO** ##
 
 ![demo](https://user-images.githubusercontent.com/78325649/126049150-f395f465-0ded-491f-9526-c18c14270bf5.gif)
 
-### theme switching
+## **THEME SWITCHING** ##
 
 ![theme](https://user-images.githubusercontent.com/78325649/126049086-cc2bf8fd-3919-4642-b271-ebac9294f3da.gif)
 
-### changing themes
+To **change theme**, enter command:
 
 ```bash
-theme -n <theme-name>
-
+theme -n <theme_name>
 ```
 
-### available themes
+There is **3 themes available**:
+  - `cyberpunk`
+  - `trains`
+  - `default`
+  - `dark theme` (coming soon)
 
-- cyberpunk
-- trains
-- default
-- dark theme (coming soon)
+## **FAQ** ##
 
-### FAQ:
-
-- will this be available on Debian? - yes
-- when will this be released? - after i come back from holiday
-- How do i install the system? - try 'sudo calamares'
-- Why is it slow on old hardware? - because its not released yet
-- where are all the forensics and penetration testing tools? - its not release yet be patient
+  - Will this be available on **Debian**? - yes, it will
+  - When will this be released? - after i come back from holiday
+  - How do i install the system? - `sudo calamares`
+  - Why is it slow on old hardware? - because its not released yet (vicsave: buy new pc)
+  - Where are all the forensics and penetration testing tools? - its not release yet, be patient
