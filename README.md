@@ -4,32 +4,38 @@
 	  <p><b>A linux distribution based on Arch Linux designed for digital forensics and penetration testing.</b></p>
 </div>
 
+
 > **NOTE**  <br/>We are not responsible for our users, we only give them the tools to use **NOT for selfish purposes**.
 
 
 <h1 align="center"><b>D E M O</b></h1>
 
-![demo](https://user-images.githubusercontent.com/78325649/126049150-f395f465-0ded-491f-9526-c18c14270bf5.gif)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/78325649/126049150-f395f465-0ded-491f-9526-c18c14270bf5.gif">
+</div>
+
 
 <h1 align="center"><b>T H E M E S</b></h1>
 
-![theme](https://user-images.githubusercontent.com/78325649/126049086-cc2bf8fd-3919-4642-b271-ebac9294f3da.gif)
-
-To **change theme**, enter command:
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/78325649/126049086-cc2bf8fd-3919-4642-b271-ebac9294f3da.gif">
+</div>
 
 ```bash
-theme -n <theme_name>
+theme -n <theme_name>  # command to change theme
 ```
 
-There is **3 themes available**:
-  - `cyberpunk`
-  - `trains`
-  - `default`
-  - `dark theme` (coming soon)
+### **AVAILABLE THEMES** ###
+  - `cyberpunk` - `theme -n cyberpunk`
+  - `trains` - `theme -n trains`
+  - `default` - `theme -n default`
+  - `dark theme` - `theme -n dark theme` (**unavailable**)
+
 
 <h1 align="center"><b>B U I L D I N G</b></h1>
 
 Run `steps.sh` located in AWM-Resonance-Arch as root.
+
 
 ### **WHEN ITS DONE** ###
 - **LiveCD Login**: resonance
