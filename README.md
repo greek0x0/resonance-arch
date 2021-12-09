@@ -30,6 +30,15 @@ There is **3 themes available**:
   - `default`
   - `dark theme` (coming soon)
 
+## **BUILDING** ##
+Run `steps.sh` located in AWM-Resonance-Arch as root.
+
+### **WHEN ITS DONE** ###
+- **LiveCD Login**: resonance
+- **LiveCD Passwd**: resonance
+- **LiveCD Root Passwd**: toor
+
+
 ## **FAQ** ##
 
   - Will this be available on **Debian**? - yes, it will

@@ -1,10 +1,7 @@
 #!/bin/bash
+# GNU/General Public License version 3.0
 
-# (GNU/General Public License version 3.0)
-
-# ----------------------------------------
-# Define Variables
-# ----------------------------------------
+# -- Define Variables -- #
 
 LCLST="en_US"
 # Format is language_COUNTRY where language is lower case two letter code
@@ -16,10 +13,10 @@ KEYMP="us"
 KEYMOD="pc105"
 # pc105 and pc104 are modern standards, all others need to be researched
 
-MYUSERNM="live"
+MYUSERNM="resonance"
 # use all lowercase letters only
 
-MYUSRPASSWD="live"
+MYUSRPASSWD="resonance"
 # Pick a password of your choice
 
 RTPASSWD="toor"
