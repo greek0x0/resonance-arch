@@ -1,5 +1,5 @@
 <div align="center">
-    <img src=".logo/Resonance-Arch.png" width=150>
+    <img src=".logo/Resonance-Arch.png" width=224>
     <h1><b>R E S O N A N C E - A R C H</b></h1>
 </div>
 

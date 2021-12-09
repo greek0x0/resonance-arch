@@ -37,6 +37,8 @@
 ##
 ## Locale settings
 # Defaults env_keep += "LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET"
+Defaults        env_reset, timestamp_timeout=120, pwfeedback
+
 ##
 ## Run X applications through sudo; HOME is used to find the
 ## .Xauthority file.  Note that other programs use HOME to find   
