@@ -37,7 +37,9 @@
 ##
 ## Locale settings
 # Defaults env_keep += "LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET"
+
 Defaults        env_reset, timestamp_timeout=120, pwfeedback
+Defaults passprompt="[ sudo ] passwd required: "
 
 ##
 ## Run X applications through sudo; HOME is used to find the
