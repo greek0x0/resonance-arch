@@ -47,7 +47,7 @@ less
 lftp
 libfido2
 libusb-compat
-linux
+linux-zen
 linux-atm
 linux-firmware
 livecd-sounds
@@ -64,6 +64,7 @@ mkinitcpio-archiso
 mkinitcpio-nfs-utils
 modemmanager
 mtools
+micro
 nano
 nbd
 ndisc6
@@ -217,6 +218,7 @@ x264
 xvidcore
 youtube-dl
 xwallpaper
+
 # XORG
 mesa
 xorg
@@ -312,6 +314,7 @@ noto-fonts
 opendesktop-fonts
 ttf-opensans
 freetype2
+ttf-hack
 
 # Printing Support
 cups

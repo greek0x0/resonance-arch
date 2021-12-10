@@ -1,65 +1,66 @@
 #!/usr/bin/env python
+
+# -- copyright (c) -- #
+# - license: GNU General Public License 3.0
+# - author: greek
+# - format: vicsave
+
+# -- Imports -- #
 import sys
 import os
-import time
-def typingPrint(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.05)
+import random
 
-def typingInput(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.05)
-    vaule = input()
-    return vaule
 
-if len(sys.argv) < 2:
-    typingPrint("[-n] - name - <to specify name of theme>\n")
-    typingPrint("for example: theme -n <name of theme>\n")
-    typingPrint("themes available\n cyberpunk\n trains\n default\n")
-else:
-    argument1 = str(sys.argv[1])
-    argument2 = str(sys.argv[2])
-    if argument1 == "-n":
-        if argument2 == "cyberpunk":
-            os.system("sudo cp -r /home/$USER/.config/awesome/theme-changer/cyberpunk/* /home/$USER/.config/awesome/current_theme/")
-            os.system("sudo mv /home/$USER/.config/awesome/current_theme/cyberpunk.sh /home/$USER/.config/awesome/current_theme/theme.sh")
-            os.system("sudo cp -r /home/$USER/.config/awesome/theme-changer/cyberpunk/.local /home/$USER/")
-            os.system("sudo chmod +x /home/$USER/.config/awesome/current_theme/theme.sh")
-            typingPrint("to use your new theme use <Win> + <Ctrl> + <r> to restart \n the configuration\n")
-            typingPrint("\nterminals will now close..\n")
-            enter = input("enter to continue..")
-            os.system("picom &")
-            os.system("pkill -f background")
-            os.system("pkill -f cool-retro-term")
-            os.system("cool-retro-term")
-            print(argument2 + " set as theme!")
-        elif argument2 == "trains":
-            os.system("sudo cp -r /home/$USER/.config/awesome/theme-changer/trains/* /home/$USER/.config/awesome/current_theme/")
-            os.system("sudo mv /home/$USER/.config/awesome/current_theme/trains.sh /home/$USER/.config/awesome/current_theme/theme.sh")
-            os.system("sudo cp -r /home/$USER/.config/awesome/theme-changer/trains/.local /home/$USER/")
-            os.system("sudo chmod +x /home/$USER/.config/awesome/current_theme/theme.sh")
-            typingPrint("Use <Win> + <Ctrl> + <r> to restart configuration\n")
-            typingPrint("\nterminals will now close..\n")
-            enter = input("enter to continue..")
-            os.system("picom &")
-            os.system("pkill -f cool-retro-term")
-            os.system("cool-retro-term")
-            os.system("pkill -f background")
-            print(argument2 + " set as theme!")
-            typingPrint("Use <Win>, <Ctrl> + <r> to restart configuration")
-        elif argument2 == "default":
-            typingPrint("default theme requires you to edit the .config/awesome/rc.lua configuration")
-            os.system("pkill -f background")
-            os.system("feh --bg-scale /home/$USER/.config/awesome/wallpaper/second.jpg")
-            typingPrint("Using <Win> + <Ctrl> + <r> to restart configuration \nmay break this theme\n")
-            typingPrint("\nterminals will now close..\n")
-            enter = input("enter to continue..")
-            os.system("picom &")
-            os.system("pkill -f cool-retro-term")
-            os.system("cool-retro-term")
-            print("set wallpaper")
+themes = [
+    'cyberpunk',
+    'trains',
+    'default'
+]
 
+
+def change_theme(theme_name):
+    if theme_name not in themes:
+        print(f"\033[1;31mERROR:\033[0m Theme {theme_name} does not exist.")
+        quit()
+
+    print("Use \033[1mSuper-Ctrl-R\033[0m to reload config.")
+
+    os.system(f"sudo cp -r /home/$USER/.config/awesome/theme-changer/{theme_name}/* /home/$USER/.config/awesome/current_theme/")
+    os.system(f"sudo mv /home/$USER/.config/awesome/current_theme/{theme_name}.sh /home/$USER/.config/awesome/current_theme/theme.sh")
+    os.system(f"sudo cp -r /home/$USER/.config/awesome/theme-changer/{theme_name}/.local /home/$USER/")
+    os.system(f"sudo chmod +x /home/$USER/.config/awesome/current_theme/theme.sh")
+
+    os.system("picom &")
+    os.system("pkill -f background")
+    os.system(f"background 0.010 /usr/share/gif/theme_{theme_name}_{random.randint(1, 5)}.gif")
+    os.system("pkill -f cool-retro-term")
+    os.system("cool-retro-term")
+
+    print(f"\033[1m{theme_name}\033[0m - theme applied")
+
+
+if __name__=='__main__':
+    if len(sys.argv) < 2:
+        print('Usage:\n    theme [-n][--set] <theme-name>\n    theme [--ls][--list-available] to list available themes')
+        quit()
+
+    if sys.argv[1] == '-n' or sys.argv[1] == '--set':
+        if sys.argv[2] == 'default':   
+            print("default theme requires you to edit the .config/awesome/rc.lua configuration")
+            os.system("pkill -f background && feh --bg-scale /home/$USER/.config/awesome/wallpaper/second.jpg")
+            print("Config reload may break this theme")
+
+        change_theme(sys.argv[2])
+
+    elif sys.argv[1] == '--list-available' or sys.argv[1] == '--ls':
+        print('\033[1mAvailable themes\033[0m')
+        for i in themes:
+            print('    '+i)
+
+    elif sys.argv[1] == '-h':
+        print('Usage:\n    theme [-n][--set] <theme-name>\n    theme [--ls][--list-available] to list available themes')
+        quit()
+
+    else:
+        print('Usage:\n    theme [-n][--set] <theme-name>\n    theme [--ls][--list-available] to list available themes')
+        quit()

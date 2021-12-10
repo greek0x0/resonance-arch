@@ -3,7 +3,7 @@
 
 iso_name="resonance-arch"
 iso_label="RESONANCE-ARCH_$(date +%Y%m)"
-iso_publisher="Resonance Arch <https://github.com/crons-hash>"
+iso_publisher="Resonance Arch <https://github.com/cronos-hash>"
 iso_application="Resonance Arch DVD"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
@@ -32,6 +32,7 @@ file_permissions=(
   ["/usr/bin/sk"]="0:0:755"
   ["/usr/bin/theme"]="0:0:755"
   ["/usr/bin/resonance"]="0:0:755"
+  ["/usr/bin/tweaks"]="0:0:755"
   ["/usr/bin/indefinite-picom"]="0:0:755"
   ["/etc/skel/.config/rofi/bin/launcher"]="0:0:755"
   ["/etc/skel/.config/rofi/bin/mpd"]="0:0:755"
