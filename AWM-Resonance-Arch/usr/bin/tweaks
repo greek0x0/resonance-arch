@@ -19,8 +19,7 @@ if not os.path.exists(f'{HOME}/.config/resolinux-tweaks'):
     os.system(f'cp /usr/share/doc/resolinux-tweaks/config.py {HOME}/.config/resolinux-tweaks')
 
 
-# config_spec = imputil.spec_from_file_location("config", f"{HOME}/.config/resolinux-tweaks/config.py")
-config_spec = imputil.spec_from_file_location("config", f"{HOME}/Documents/Projects/resonance-arch/AWM-Resonance-Arch/usr/share/doc/resolinux-tweaks/config.py")
+config_spec = imputil.spec_from_file_location("config", f"{HOME}/.config/resolinux-tweaks/config.py")
 
 config = imputil.module_from_spec(config_spec)
 config_spec.loader.exec_module(config)
