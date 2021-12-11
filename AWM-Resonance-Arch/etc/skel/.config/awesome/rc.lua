@@ -106,7 +106,7 @@ local themes = {
     "vertex"           -- 10
 }
 
-local chosen_theme = themes[5]
+local chosen_theme = themes[1]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "cool-retro-term"
@@ -523,11 +523,11 @@ globalkeys = mytable.join(
               {description = "Power Menu", group = "launcher"}),
 
 	   --Launcher traditional windowed
-   awful.key({ altkey }, "Return", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/launcher") end,
+   awful.key({ altkey }, "Return", function () awful.spawn.with_shell("~/.config//rofi/bin/launcher") end,
               {description = "Applications", group = "launcher"}),
 
 --Launch alt-space
-   awful.key({ altkey }, "space", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/launcher") end,
+   awful.key({ altkey }, "space", function () awful.spawn.with_shell("~/.config//rofi/bin/launcher") end,
    --Launcher modkey - d
               {description = "Applications", group = "launcher"}),
 
@@ -545,10 +545,10 @@ globalkeys = mytable.join(
    awful.key({ modkey }, "p", function () awful.spawn.with_shell("bash ~/.config/rofi/bin/powermenu") end,
               {description = "PowerMenu", group = "launcher"}),
 
-   awful.key({ modkey }, "m", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/music") end,
+   awful.key({ modkey }, "m", function () awful.spawn.with_shell("~/.config/rofi/bin/music") end,
               {description = "Music", group = "launcher"}),
 
-   awful.key({ modkey }, "s", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/screenshot") end,
+   awful.key({ modkey }, "s", function () awful.spawn.with_shell("~/.config/rofi/bin/screenshot") end,
               {description = "Screenshot", group = "launcher"}),
     -- Default
     --[[ Menubar
