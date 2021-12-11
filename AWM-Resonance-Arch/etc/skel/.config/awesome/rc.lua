@@ -71,7 +71,9 @@ awful.spawn.with_shell('pkill -f indefinite-picom')
 awful.spawn.with_shell("ksuperkey -e 'Super_L=Alt_L|F1' &")
 awful.spawn.with_shell("ksuperkey -e 'Super_R=Alt_R|F1' &")
 awful.spawn.with_shell('indefinite-picom &')
-run_once({ "picom -b --experimental-backends &", "unclutter -root","lxsession &", "xfsettingsd --replace --no-daemon","xset s noblank dpms force on", "exec mpd &", "resonance"}) -- comma-separated entries
+run_once({ "picom -b --experimental-backends &", 
+"unclutter -root","lxsession &", "xfsettingsd --replace --no-daemon",
+"xset s noblank dpms force on", "exec mpd &", "if [[ ! `pidof xfce-polkit` ]]; then /usr/lib/xfce-polkit/xfce-polkit & fi", "xfce4-power-manager &" }) -- comma-separated entries
 --xset prevents the display from timeout, fixes picom issue
 --awful.spawn.with_shell('bash /home/$USER/.config/awesome/theme-changer/trains/trains.sh')
 --awful.spawn.with_shell('bash /home/$USER/.config/awesome/theme-changer/cyberpunk/cyberpunk.sh')
@@ -126,7 +128,7 @@ awful.layout.layouts = {
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
+    awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
@@ -134,8 +136,8 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.se,
     --lain.layout.cascade,
     --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
-    --lain.layout.centerwork.horizontal,
+    lain.layout.centerwork,
+    lain.layout.centerwork.horizontal,
     --lain.layout.termfair,
     --lain.layout.termfair.center
 }
@@ -512,7 +514,8 @@ globalkeys = mytable.join(
     awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
               {description = "copy gtk to terminal", group = "hotkeys"}),
 
-    -- User programs
+    -- User programs test
+
 
 
     --BROWSER
@@ -520,11 +523,11 @@ globalkeys = mytable.join(
               {description = "Power Menu", group = "launcher"}),
 
 	   --Launcher traditional windowed
-   awful.key({ altkey }, "Return", function () awful.spawn.with_shell("rofi -show window -theme ~/.config/rofi/nordic/launcher.rasi") end,
+   awful.key({ altkey }, "Return", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/launcher") end,
               {description = "Applications", group = "launcher"}),
 
 --Launch alt-space
-   awful.key({ altkey }, "space", function () awful.spawn.with_shell("bash ~/.conifg/rofi/bin/launcher'") end,
+   awful.key({ altkey }, "space", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/launcher") end,
    --Launcher modkey - d
               {description = "Applications", group = "launcher"}),
 
@@ -532,7 +535,7 @@ globalkeys = mytable.join(
    --Network modkey n
               {description = "Applications", group = "launcher"}),
 
-   awful.key({ modkey }, "n", function () awful.spawn.with_shell("bash /home/$USER/.config/rofi/bin/network") end,
+   awful.key({ modkey }, "n", function () awful.spawn.with_shell("networkmanager_dmenu") end,
               {description = "Network Settings", group = "launcher"}),
 
    --Launcher altkey - space
@@ -542,10 +545,10 @@ globalkeys = mytable.join(
    awful.key({ modkey }, "p", function () awful.spawn.with_shell("bash ~/.config/rofi/bin/powermenu") end,
               {description = "PowerMenu", group = "launcher"}),
 
-   awful.key({ modkey }, "m", function () awful.spawn.with_shell("bash ~/.config/rofi/bin/mpd") end,
+   awful.key({ modkey }, "m", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/music") end,
               {description = "Music", group = "launcher"}),
 
-   awful.key({ modkey }, "s", function () awful.spawn.with_shell("bash ~/.config/rofi/bin/screenshot") end,
+   awful.key({ modkey }, "s", function () awful.spawn.with_shell("~/.config/openbox/rofi/bin/screenshot") end,
               {description = "Screenshot", group = "launcher"}),
     -- Default
     --[[ Menubar
