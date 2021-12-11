@@ -30,7 +30,7 @@ def change_theme(theme_name):
     os.system(f"sudo cp -r /home/$USER/.config/awesome/theme-changer/{theme_name}/.local /home/$USER/")
     os.system(f"sudo chmod +x /home/$USER/.config/awesome/current_theme/theme.sh")
 
-    os.system("picom &")
+    os.system("pkill -f picom && picom")
     os.system("pkill -f background")
     os.system(f"background 0.010 /usr/share/gif/theme_{theme_name}_{random.randint(1, 5)}.gif")
     os.system("pkill -f cool-retro-term")
