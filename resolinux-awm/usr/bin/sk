@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+import os
+
+os.system("clear")
+os.system("cowsay welcome to ResoLinux | lolcat")
+
+del os
+
+print('''
+hell0-fr1end\033[0m, welcome to ResoLinux.
+
+    - Launch installer        : \033[1msudo calamares\033[0m
+    - Change theme            : \033[1mtheme -h\033[0m
+
+    - Open terminal           : \033[1mSuper-Enter\033[0m
+    - Change window placement : \033[1mSuper-Space\033[0m
+    - Open browser            : \033[1mSuper-Q\033[0m
+    - App launcher            : \033[1mAlt-Space\033[0m
+    - Close window            : \033[1mSuper-Shift-C\033[0m
+    - Hotkeys available       : \033[1mSuper-S\033[0m
+
+Good luck!
+                                                    - Greek & vicsave
+''')
+
+quit()

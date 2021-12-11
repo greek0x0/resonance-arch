@@ -1,0 +1,11 @@
+/* tokyo night */
+
+* {
+  al:  #00000000;
+  bg:  #1a1b26C0;
+  se:  #ff9e64;
+  /* se:  #e0af68; */
+  fg:  #cfc9c2;
+  ac:  #73daca;
+  /* ac:  #9aa6ce; */
+}

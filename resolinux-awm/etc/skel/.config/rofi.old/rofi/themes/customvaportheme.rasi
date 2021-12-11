@@ -1,0 +1,137 @@
+/**
+ * Nordic rofi theme
+ * Adapted by undiabler <undiabler@gmail.com>
+ *
+ * Nord Color palette imported from https://www.nordtheme.com/
+ *
+ */
+
+configuration {
+
+	font: "Envy Code R 10";
+	width: 30;
+	line-margin: 10;
+	lines: 6;
+	columns: 2;
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
+}
+
+* {
+	nord0: #100226;
+	nord1: #140f29;
+	nord2: #be1ad0;
+	nord3: #000024;
+
+	nord4: #c800c4;
+	nord5: #2b097c;
+	nord6: #14102d;
+
+	nord7: #8510CD;
+	nord8: #ff546e;
+	nord9: #13021b;
+	nord10: #8f28ff;
+	nord11: #630e56;
+
+	nord12: #8f28ff;
+	nord13: #240066;
+	nord14: #000024;
+	nord15: #1a032c;
+
+    foreground:  @nord9;
+    backlight:   #100226;
+    background-color:  transparent;
+    
+    highlight:     underline bold #eceff4;
+
+    transparent: rgba(46,52,64,0);
+}
+
+window {
+    location: center;
+    anchor:   center;
+    transparency: "screenshot";
+    padding: 10px;
+    border:  0px;
+    border-radius: 6px;
+
+    background-color: @transparent;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+message {
+    color: @nord0;
+    padding: 5;
+    border-color: @foreground;
+    border:  0px 2px 2px 2px;
+    background-color: @nord7;
+}
+
+inputbar {
+    color: @nord6;
+    padding: 11px;
+    background-color: #8510CD;
+
+    border: 1px;
+    border-radius:  6px 6px 0px 0px;
+    border-color: @nord10;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+
+prompt {
+    margin: 0px 0.3em 0em 0em ;
+}
+
+listview {
+    padding: 8px;
+    border-radius: 0px 0px 6px 6px;
+    border-color: @nord10;
+    border: 0px 1px 1px 1px;
+    background-color: rgba(46,52,64,0.9);
+    dynamic: false;
+}
+
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    color: @foreground;
+    text-color: rgb(216, 222, 233);
+}
+
+element selected.normal {
+	background-color: @nord7;
+	text-color: #FF90A3;
+}
+
+button {
+    padding: 6px;
+    color: @foreground;
+    horizontal-align: 0.5;
+
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @foreground;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @foreground;
+}
