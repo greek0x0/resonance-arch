@@ -5,6 +5,8 @@
 # - author: greek
 # - format: vicsave
 
+#! DEPRECATED SCRIPT, WILL BE REMOVED LATER !#
+
 # -- Imports -- #
 import sys
 import os
