@@ -43,7 +43,7 @@ Run `steps.sh` located in AWM-Resonance-Arch as root.
 
 
 <h1 align="center"><b>F A Q</b></h1>
-
+<p>is it done yet? - no we need more contributors</p>
 
 <h1 align="center"><b>C O N T R I B U T O R S</b></h1>
 
