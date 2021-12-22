@@ -2,7 +2,7 @@
     <img src=".logo/Resonance-Arch.png" width=224>
     <h1><b>R E S O N A N C E - A R C H</b></h1>
 	  <p><b>A linux distribution based on Arch Linux designed for digital forensics and penetration testing.</b></p>
-	<p><a>https://resolinux.org</p>
+	<p><a href="https://resolinux.org">https://resolinux.org</a></p>
 </div>
 
 
