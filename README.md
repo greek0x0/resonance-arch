@@ -6,8 +6,6 @@
 </div>
 
 
-> **NOTE**  <br/>We are not responsible for our users, we only give them the tools to use **NOT for selfish purposes**.
-
 
 <h1 align="center"><b>D E M O</b></h1>
 
@@ -46,11 +44,6 @@ Run `steps.sh` located in AWM-Resonance-Arch as root.
 
 <h1 align="center"><b>F A Q</b></h1>
 
-  - Will this be available on **Debian**? - yes, it will
-  - When will this be released? - after i come back from holiday
-  - How do i install the system? - `sudo calamares`
-  - Why is it slow on old hardware? - because its not released yet (vicsave: buy new pc)
-  - Where are all the forensics and penetration testing tools? - its not release yet, be patient
 
 <h1 align="center"><b>C O N T R I B U T O R S</b></h1>
 
