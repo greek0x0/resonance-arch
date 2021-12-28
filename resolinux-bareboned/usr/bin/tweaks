@@ -1,0 +1,152 @@
+#!/usr/bin/env python
+
+# -- copyright (c) -- #
+# - license: GNU General Public License 3.0
+# - author: visave
+
+import sys
+import os
+import random
+import importlib.util as imputil
+
+HOME = os.path.expanduser('~')
+
+
+if not os.path.exists(f'{HOME}/.config/resolinux-tweaks'):
+    os.mkdir(f'{HOME}/.config/resolinux-tweaks')
+    os.system(f'cp -a /usr/share/doc/resolinux-tweaks/ {HOME}/.config/')
+
+
+config_spec = imputil.spec_from_file_location("config", f"{HOME}/.config/resolinux-tweaks/config.py")
+
+config = imputil.module_from_spec(config_spec)
+config_spec.loader.exec_module(config)
+
+
+def confirm():
+    inp = input("Are you sure want to proceed? [Y/n] ")
+    if inp.lower() == "y":
+        return True
+    elif inp.lower() == "n":
+        return False
+    else:
+        return True
+
+
+def remove_orphans():
+    print('\033[1;33mWARNING:\033[0m Removing orphaned packages sometimes will wrong detect orphanes. Be careful!')
+    if confirm():
+        os.system("sudo pacman -Rs $(sudo pacman -Qtdq) --noconfirm")
+    quit()
+
+
+def clear_pkg_cache():
+    if confirm():
+        print('removing /var/cache/pacman/pkg files...')
+        os.system('sudo rm -rf /var/cache/pacman/pkg')
+        print('done')
+    quit()
+
+
+def change_bash_theme(theme_name):
+    with open(f"{HOME}/.bashrc", 'r') as fr:
+        contents = fr.readlines()
+        theme = open(f'{HOME}/.config/resolinux-tweaks/bash-themes/resolinux_{theme_name}.bashrc')
+        theme_contents = theme.readlines()[0]
+        cline = 0
+
+        with open(f"{HOME}/.bashrc", "w") as fw:
+            for line in contents:
+                if line.startswith("PS1"):
+                    fw.write(line)
+                    fw.write(theme_contents)
+                cline += 1
+            fw.write(theme_contents)
+    quit()
+
+
+def change_theme(theme_name):
+    if theme_name not in config.themes:
+        print(f"\033[1;31mERROR:\033[0m Theme {theme_name} does not exist.")
+        quit()
+
+    print("Use \033[1mSuper-Ctrl-R\033[0m to reload config.")
+
+    os.system(f"sudo cp -r /home/$USER/.config/awesome/theme-changer/{theme_name}/* /home/$USER/.config/awesome/current_theme/")
+    os.system(f"sudo mv /home/$USER/.config/awesome/current_theme/{theme_name}.sh /home/$USER/.config/awesome/current_theme/theme.sh")
+    os.system(f"sudo cp -r /home/$USER/.config/awesome/theme-changer/{theme_name}/.local /home/$USER/")
+    os.system(f"sudo chmod +x /home/$USER/.config/awesome/current_theme/theme.sh")
+
+    os.system("pkill -f picom && picom")
+    os.system("pkill -f background")
+
+    if config.TWEAKS_GIF_WALLPAPER:
+        os.system(f"background 0.010 /usr/share/gif/theme_{theme_name}_{random.randint(1, 5)}.gif")
+    else:
+        pass # idk how to change wp
+    
+    os.system("pkill -f cool-retro-term")
+    os.system("cool-retro-term")
+
+    print(f"\033[1m{theme_name}\033[0m - theme applied")
+
+
+if __name__=='__main__':
+    if len(sys.argv) < 2:
+        print('Usage:\n    appearance: tweaks [-t][-w] <[theme-name][path-to-wallpaper]>\n    packages: tweaks [remove-orphans][clear-pkg-cache]')
+        quit()
+
+    if sys.argv[1] == '-t':
+        if sys.argv[2] == 'default':   
+            print("default theme requires you to edit the .config/awesome/rc.lua configuration")
+            os.system("pkill -f background && feh --bg-scale /home/$USER/.config/awesome/wallpaper/second.jpg")
+            print("Config reload may break this theme")
+
+        change_theme(sys.argv[2])
+
+    elif sys.argv[1] == '--list-available' or sys.argv[1] == '--ls':
+        print('\033[1mAvailable themes\033[0m')
+        for i in config.themes:
+            print('    '+i)
+
+    elif sys.argv[1] == '-bt':
+        if sys.argv[2] == 'reset':
+            os.system()
+        change_bash_theme(sys.argv[2])        
+
+    elif sys.argv[1] == '-h':
+        print('Usage:\n    appearance: tweaks [-t][-w] <[theme-name][path-to-wallpaper]>\n    packages: tweaks [remove-orphans][clear-pkg-cache]')
+        quit()
+
+    elif "--welcome" in sys.argv:
+        os.system("clear")
+        os.system("cowsay welcome to ResoLinux | lolcat")
+
+
+        print('''
+hell0-fr1end\033[0m, welcome to ResoLinux.
+
+    - Launch installer        : \033[1msudo calamares\033[0m
+    - Change theme            : \033[1mtheme -h\033[0m
+
+    - Open terminal           : \033[1mSuper-Enter\033[0m
+    - Change window placement : \033[1mSuper-Space\033[0m
+    - Open browser            : \033[1mSuper-Q\033[0m
+    - App launcher            : \033[1mAlt-Space\033[0m
+    - Close window            : \033[1mSuper-Shift-C\033[0m
+    - Hotkeys available       : \033[1mSuper-S\033[0m
+
+Good luck!
+                                                    - Greek & vicsave''')
+
+
+
+    else:
+        try:
+            eval(f"{sys.argv[1].replace('-', '_')}()")
+            quit()
+
+        except:
+            print('Usage:\n    appearance: tweaks [-t][-w] <[theme-name][path-to-wallpaper]>\n    packages: tweaks [remove-orphans][clear-pkg-cache]')
+            quit()
+
