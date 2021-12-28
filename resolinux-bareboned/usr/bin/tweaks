@@ -9,6 +9,9 @@ import os
 import random
 import importlib.util as imputil
 
+import subprocess
+import signal
+
 HOME = os.path.expanduser('~')
 
 
@@ -32,12 +35,14 @@ def confirm():
     else:
         return True
 
+def kill_process(pid or pname):
+
+
 
 def remove_orphans():
     print('\033[1;33mWARNING:\033[0m Removing orphaned packages sometimes will wrong detect orphanes. Be careful!')
     if confirm():
         os.system("sudo pacman -Rs $(sudo pacman -Qtdq) --noconfirm")
-    quit()
 
 
 def clear_pkg_cache():
@@ -45,24 +50,7 @@ def clear_pkg_cache():
         print('removing /var/cache/pacman/pkg files...')
         os.system('sudo rm -rf /var/cache/pacman/pkg')
         print('done')
-    quit()
 
-
-def change_bash_theme(theme_name):
-    with open(f"{HOME}/.bashrc", 'r') as fr:
-        contents = fr.readlines()
-        theme = open(f'{HOME}/.config/resolinux-tweaks/bash-themes/resolinux_{theme_name}.bashrc')
-        theme_contents = theme.readlines()[0]
-        cline = 0
-
-        with open(f"{HOME}/.bashrc", "w") as fw:
-            for line in contents:
-                if line.startswith("PS1"):
-                    fw.write(line)
-                    fw.write(theme_contents)
-                cline += 1
-            fw.write(theme_contents)
-    quit()
 
 
 def change_theme(theme_name):
