@@ -47,5 +47,5 @@ Run `steps.sh` located in AWM-Resonance-Arch as root.
 
 <h1 align="center"><b>C O N T R I B U T O R S</b></h1>
 
-- [**cronos-hash**](https://github.com/cronos-hash)
+- [**Z16Z4**](https://github.com/Z16Z4)
 - [**vicsave (Victoria Savelyeva)**](https://github.com/vicsave)
